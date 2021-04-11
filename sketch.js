@@ -34,6 +34,10 @@ function draw() {
   if(keyWentDown(UP_ARROW)){
     writeStock(foodS);
     dog.addImage(dogHappy);
+    foodS=foodS-1;
+  }
+  if(foodS<=0){
+    dog.addImage(dogImage);
   }
 
   drawSprites();
@@ -42,6 +46,7 @@ function draw() {
   fill("white");
   stroke(7);
   text("Note:Press UP_ARROW Key To Feed The Dog!",50,200);
+  text("Food Remaining:"+foodS,140,300);
 
 }
 function readStock(data){
